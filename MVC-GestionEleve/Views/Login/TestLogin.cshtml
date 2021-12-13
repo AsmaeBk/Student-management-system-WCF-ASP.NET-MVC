@@ -1,0 +1,44 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html>
+
+<body>
+    <form method="post" action="@Url.Action("TestLogin")">
+
+        <label class="col-1">  Username  <input type="text" name="username" /></label>
+        <br />
+        <label class="col-1">
+            Password<input type="text" name="password" />
+        </label>
+        <input type="submit" value="Login" class="btn btn-danger" />
+    </form>
+
+
+    @*@using (Html.BeginForm("", "ElevesCrud"))
+    {<form method="post" action="@Url.Action("TestLogin")" class="col-12">
+            <label>
+                <input type="submit" value="Login" />
+            </label>
+            <label class="col-1">  Username  <input type="text" name="username" /></label>
+            <br />
+            <label class="col-1">
+                Password<input type="text" name="password" />
+            </label>
+        </form>
+
+    }*@
+
+    @*<h2>Login</h2>
+        <form method="post" action="@Url.TestLogin("updateEleve")" class="col-12">
+            <label class="col-1">  Username  <input type="text" name="username" /></label>
+            <br />
+            <label class="col-1">
+                Password  <input type="text" name="password" />
+            </label>
+            <br />
+        </form>*@
+</body></html>

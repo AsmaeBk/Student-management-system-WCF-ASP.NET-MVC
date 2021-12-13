@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "insertEleve";
+}
+<h2>Inserer un eleve</h2>
+<form method="post" action="@Url.Action("insertEleve")" class="col-12">
+    <label class="col-1" >  Id  <input type="text" name="Id" /></label>
+    <br />
+    <label class="col-1" >
+        CNE  <input type="text" name="CNE" />
+    </label>
+    <br />
+    <label class="col-1" >
+        Nom  <input type="text" name="Nom" />
+    </label>
+    <br />
+    <label class="col-1" >  Prenom  <input type="text" name="Prenom" /></label>
+    <br />
+    <label class="col-1">  Photo <input type="text" name="Photo" /></label>
+    <br />
+    <label class="col-1"> Tel <input type="text" name="Tel" /></label>
+    <br />
+
+    <label class="col-1">  Email <input type="text" name="Email" /></label>
+    <br />
+    <label class="col-1">  <input type="submit" value="Insert" /></label>
+    <br />
+
+</form>

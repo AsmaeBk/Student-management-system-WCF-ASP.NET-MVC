@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index Eleve</title>
+</head>
+<body>
+    <h3>Liste des eleves</h3>
+
+    @using (Html.BeginForm("search", "eleve"))
+    {
+        <span>Chercher par CNE</span> <input type="text" name="cne" />
+        <input type="submit" value="Chercher" />
+    }
+    <br />
+    <table cellpadding="2" cellspacing="2" border="1" class="table">
+        <tr>
+            <th>Id</th>
+            <th>CNE</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Photo</th>
+            <th>Tel</th>
+            <th>Email</th>
+        </tr>
+        @foreach (var eleve in ViewBag.listEleves)
+        {
+            <tr>
+                <td>@eleve.Id</td>
+                <td>@eleve.CNE</td>
+                <td>@eleve.Nom</td>
+                <td>@eleve.Prenom</td>
+                <td>    <a href="@eleve.Photo">image de @eleve.Prenom</a></td>
+                <td>@eleve.Tel</td>
+                <td>@eleve.Email</td>
+            </tr>
+        }
+
+    </table>
+</body>
+
+</html>
+

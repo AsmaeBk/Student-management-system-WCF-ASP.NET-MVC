@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "getEleves";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MVC_GestionEleve</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h2>Liste des eleves</h2>
+    <div class="container" style="text-align:right;">
+
+        <div class="col-12">
+            <a class="btn btn-info " asp-area="" asp-controller="ElevesCrud" asp-action="updateEleve">Edit </a>
+            <a class="btn btn-danger" asp-area="" asp-controller="ElevesCrud" asp-action="deleteEleve">Delete </a>
+            <a class="btn btn-success" asp-area="" asp-controller="ElevesCrud" asp-action="insertEleve">Inserer un eleve</a>
+        </div>
+        <div>
+            <br />
+
+        </div>
+        <table border="1" class="table" >
+            <tr>
+                <th style="text-align:center;">Id</th>
+                <th style="text-align:center;">Cne</th>
+                <th style="text-align:center;">Nom</th>
+                <th style="text-align:center;">Prenom</th>
+                <th style="text-align:center;">Photo</th>
+                <th style="text-align:center;">Tel</th>
+                <th style="text-align:center;">Email</th>
+
+            </tr>
+            @foreach (var item in ViewBag.List)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.CNE</td>
+                    <td>@item.Nom</td>
+                    <td>@item.Prenom</td>
+                    <td> <a href="@item.Photo">image de @item.Prenom</a></td>
+                    <td>@item.Tel</td>
+                    <td>@item.Email</td>
+
+                </tr>
+            }
+        </table>
+    </div>
+</body></html>

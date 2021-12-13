@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EnseignementModelStoreContainer" CdmEntityContainer="EnseignementEntities1">
+    <EntitySetMapping Name="Eleve_">
+      <EntityTypeMapping TypeName="EnseignementModel.Eleve_">
+        <MappingFragment StoreEntitySet="Eleve_">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CNE" ColumnName="CNE" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Eleves">
+      <EntityTypeMapping TypeName="EnseignementModel.Eleves">
+        <MappingFragment StoreEntitySet="Eleves">
+          <ScalarProperty Name="ID_Eleve" ColumnName="ID_Eleve" />
+          <ScalarProperty Name="CNE" ColumnName="CNE" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

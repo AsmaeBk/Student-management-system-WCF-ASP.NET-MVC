@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnseignementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Enseignement.dbo.Eleve_' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Eleve_">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CNE" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prenom" Type="nvarchar" MaxLength="50" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="155" />
+    <Property Name="Email" Type="nvarchar" MaxLength="155" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Enseignement.dbo.Eleves' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Eleves">
+    <Key>
+      <PropertyRef Name="ID_Eleve" />
+      <PropertyRef Name="CNE" />
+      <PropertyRef Name="Nom" />
+      <PropertyRef Name="Prenom" />
+      <PropertyRef Name="Tel" />
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="ID_Eleve" Type="int" Nullable="false" />
+    <Property Name="CNE" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nom" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenom" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="Tel" Type="nchar" MaxLength="25" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EnseignementModelStoreContainer">
+    <EntitySet Name="Eleve_" EntityType="Self.Eleve_" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Eleve_].[Id] AS [Id], 
+    [Eleve_].[CNE] AS [CNE], 
+    [Eleve_].[Nom] AS [Nom], 
+    [Eleve_].[Prenom] AS [Prenom], 
+    [Eleve_].[Photo] AS [Photo], 
+    [Eleve_].[Tel] AS [Tel], 
+    [Eleve_].[Email] AS [Email]
+    FROM [dbo].[Eleve_] AS [Eleve_]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Eleves" EntityType="Self.Eleves" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Eleves].[ID_Eleve] AS [ID_Eleve], 
+    [Eleves].[CNE] AS [CNE], 
+    [Eleves].[Nom] AS [Nom], 
+    [Eleves].[Prenom] AS [Prenom], 
+    [Eleves].[Photo] AS [Photo], 
+    [Eleves].[Tel] AS [Tel], 
+    [Eleves].[Email] AS [Email]
+    FROM [dbo].[Eleves] AS [Eleves]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

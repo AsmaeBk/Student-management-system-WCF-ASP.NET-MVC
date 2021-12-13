@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnseignementModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Eleve_">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CNE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="155" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="155" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Eleves">
+    <Key>
+      <PropertyRef Name="ID_Eleve" />
+      <PropertyRef Name="CNE" />
+      <PropertyRef Name="Nom" />
+      <PropertyRef Name="Prenom" />
+      <PropertyRef Name="Tel" />
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="ID_Eleve" Type="Int32" Nullable="false" />
+    <Property Name="CNE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Nom" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Prenom" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Tel" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EnseignementEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Eleve_" EntityType="Self.Eleve_" />
+    <EntitySet Name="Eleves" EntityType="Self.Eleves" />
+  </EntityContainer>
+</Schema>
